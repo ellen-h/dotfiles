@@ -3,8 +3,8 @@ These instructions are Mac-centric.
 ----
 # To Do:
 
-[ ] Document bash and prompt customizations.
-[ ] Create installation script.
+- [ ] Document bash and prompt customizations.
+- [ ] Create installation script.
 
 ----
 # Vim
@@ -40,7 +40,9 @@ Use NERDTree.
 `git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree`
 
 I like it disabled by default. To open the explorer in vim: `:NERDTree`, or map it
-to a shortcut in **.vimrc**: `map ,e :NERDTree<CR>` (then, in vim, open with `,e`)
+to a shortcut in **.vimrc**:
+
+`map ,e :NERDTree<CR>` (then, in vim, open with `,e`)
 
 See next section for help moving around the multiple windows that result from
 running nerdtree.
@@ -52,6 +54,8 @@ Split your vim window.
 
 ### Cheat Sheet
 
+| ٩(̾●̮̮̃̾•̃̾)۶ |  |
+| --- | ---|
 | :split           | Split this file. Handy for viewing different parts of big file. |
 | :split filename  | Split window and edit another file |
 | :vsplit          | Vertical split |
