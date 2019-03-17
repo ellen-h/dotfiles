@@ -9,6 +9,17 @@ These instructions are Mac-centric.
 ----
 # Vim
 
+## Quicklist of Vim Plugins
+
+Install with Pathogen: [vim-pathogen](https://github.com/tpope/vim-pathogen)
+
+    git clone https://github.com/kien/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
+    git clone https://github.com/itchyny/lightline.vim ~/.vim/bundle/lightline.vim
+    git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
+    git clone https://github.com/pangloss/vim-javascript.git ~/.vim/bundle/vim-javascript
+    git clone https://github.com/mxw/vim-jsx.git ~/.vim/bundle/vim-jsx
+
+
 ## Autocomplete and Jump to Definitions
 
 Use ctags. No need for plugins! Install ctags (macOS comes with one, but missing some features).
@@ -78,3 +89,9 @@ Split your vim window.
 **Issues**:
 Not sure whyyyy. Workaround: create a symbolic link from `~/.vim/after/indent/javascript/jsx.vim` to `~/.vim/bundle/vim-jsx/after/indent/jsx.vim`
 
+----
+# iTerm2
+
+wget https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Solarized%20Dark%20Higher%20Contrast.itermcolors
+
+* Edit profile > Colors > Color Presets... > Import ...
