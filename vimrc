@@ -53,8 +53,31 @@ au FileType javascript set shiftwidth=2
 au FileType html set tabstop=2
 au FileType html set shiftwidth=2
 
+" Linting
+" ============================================================================
+
+" Lint only on save
+" let g:ale_lint_on_text_changed = 'never'
+
+" flake8
+let g:ale_linters = {'python': ['flake8']}
+
+" Markers for gutter
+let g:ale_sign_error = '😱'
+let g:ale_sign_warning = '😳'
+let g:ale_sign_info = '🤔'
+let g:ale_sign_style_error = '🙄'
+let g:ale_sign_style_warning = '🧐'
+
+" Search for ctags file up to root
+set tags=.ctags;
+
 " Oddities
 " ============================================================================
 
 " nerdtree quirk: get rid of visible delimiter "^G"
 let g:NERDTreeNodeDelimiter = "\u00a0"
+
+" Colour fix for iTerm2
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
