@@ -8,8 +8,17 @@ map ,e :NERDTree<CR>
 map ,t :NERDTree<CR>
 map ,p :CtrlP<CR>
 
+" Pretty things
+" ============================================================================
+" Lightline
+set laststatus=2
+let g:lightline = {
+\   'component_function': {
+\       'gitbranch': 'gitbranch#name'
+\   }
+\ }
 
-" Colours and Highlighting
+" Highlighting
 " ============================================================================
 
 " Highlight extra whitespace
@@ -17,6 +26,8 @@ highlight BadWhitespace ctermbg=gray guibg=gray
 au BufRead,BufNewFile *.* match BadWhitespace /^\t\+/
 au BufRead,BufNewFile *.* match BadWhitespace /\s\+$/
 
+" Syntax
+" ============================================================================
 " JSX highlight .jsx files only
 " let g:jsx_ext_required = 1
 

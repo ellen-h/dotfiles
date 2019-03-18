@@ -89,9 +89,14 @@ Split your vim window.
 **Issues**:
 Not sure whyyyy. Workaround: create a symbolic link from `~/.vim/after/indent/javascript/jsx.vim` to `~/.vim/bundle/vim-jsx/after/indent/jsx.vim`
 
+    mkdir -p ~/.vim/after/syntax/javascript
+    mkdir -p ~/.vim/after/indent/javascript
+    ln -s ~/.vim/bundle/vim-jsx/after/syntax/jsx.vim ~/.vim/after/syntax/javascript
+    ln -s ~/.vim/bundle/vim-jsx/after/indent/jsx.vim ~/.vim/after/indent/javascript
+
 ----
 # iTerm2
 
-wget https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Solarized%20Dark%20Higher%20Contrast.itermcolors
+`wget https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Solarized%20Dark%20Higher%20Contrast.itermcolors`
 
-* Edit profile > Colors > Color Presets... > Import ...
+* Profile > Colors > Color Presets... > Import ...
