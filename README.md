@@ -11,8 +11,9 @@ These instructions are Mac-centric.
 
 ## Quicklist of Vim Plugins
 
-Install with Pathogen: [vim-pathogen](https://github.com/tpope/vim-pathogen)
+Install using Pathogen: [vim-pathogen](https://github.com/tpope/vim-pathogen)
 
+    git clone https://github.com/w0rp/ale.git ~/.vim/bundle/ale.git
     git clone https://github.com/kien/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
     git clone https://github.com/itchyny/lightline.vim ~/.vim/bundle/lightline.vim
     git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
@@ -26,8 +27,9 @@ Use ctags. No need for plugins! Install ctags (macOS comes with one, but missing
 
 `brew install ctags`
 
-* Run `ctags` at your project root: `ctags -R .`
-* By default, it creates a `tags` file, but you could put it somewhere more discreet: `ctags -R -f ./.git/tags`.
+* By default, ctags creates a file called **tags**
+* Run `ctags` at your project root, and put the tags in file called **.ctags**: `ctags -R -f .ctags`
+* Or, you could put it somewhere more discreet: `ctags -R -f ./.git/tags`
 
 ### Cheat Sheet
 
@@ -35,13 +37,16 @@ Use ctags. No need for plugins! Install ctags (macOS comes with one, but missing
 * **Definition**: `<Ctrl-]>` jump, `<Ctrl-t>` back
 
 
+## Linting
+
+That's done with ale.
+
+
 ## Nice Status Bar
 
 Lightline
 
 `git clone https://github.com/itchyny/lightline.vim ~/.vim/bundle/lightline.vim`
-
-**Issues**: Only working with NERDTree. Won't show up on its own.
 
 
 ## Directory Tree Explorer
@@ -65,8 +70,8 @@ Split your vim window.
 
 ### Cheat Sheet
 
-| ٩(̾●̮̮̃̾•̃̾)۶ |  |
-| --- | ---|
+| Command          | ٩(̾●̮̮̃̾•̃̾)۶ |
+| ---              | ---|
 | :split           | Split this file. Handy for viewing different parts of big file. |
 | :split filename  | Split window and edit another file |
 | :vsplit          | Vertical split |
@@ -87,7 +92,8 @@ Split your vim window.
 `git clone https://github.com/pangloss/vim-javascript.git ~/.vim/bundle/vim-javascript`
 
 **Issues**:
-Not sure whyyyy. Workaround: create a symbolic link from `~/.vim/after/indent/javascript/jsx.vim` to `~/.vim/bundle/vim-jsx/after/indent/jsx.vim`
+
+Not sure whyyyy, but the JSX highlighter doesn't work. Workaround: create a couple of symbolic links:
 
     mkdir -p ~/.vim/after/syntax/javascript
     mkdir -p ~/.vim/after/indent/javascript
@@ -95,6 +101,7 @@ Not sure whyyyy. Workaround: create a symbolic link from `~/.vim/after/indent/ja
     ln -s ~/.vim/bundle/vim-jsx/after/indent/jsx.vim ~/.vim/after/indent/javascript
 
 ----
+
 # iTerm2
 
 `wget https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Solarized%20Dark%20Higher%20Contrast.itermcolors`
