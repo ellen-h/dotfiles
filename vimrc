@@ -59,7 +59,6 @@ au FileType html set shiftwidth=2
 " Lint only on save
 " let g:ale_lint_on_text_changed = 'never'
 
-" flake8
 let g:ale_linters = {'python': ['flake8']}
 
 " Markers for gutter
@@ -69,8 +68,12 @@ let g:ale_sign_info = '🤔'
 let g:ale_sign_style_error = '🙄'
 let g:ale_sign_style_warning = '🧐'
 
+" Clear gutter highlights
+highlight clear ALEErrorSign
+highlight clear ALEWarningSign
+
 " Search for ctags file up to root
-set tags=.ctags;
+set tags=./tags;/
 
 " Oddities
 " ============================================================================
