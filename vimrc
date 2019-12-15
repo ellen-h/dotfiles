@@ -1,12 +1,24 @@
-execute pathogen#infect()
+" Plugins
+" :PlugInstall to install new plugins
+" ============================================================================
+call plug#begin('~/.vim/plugged')
+Plug 'sheerun/vim-polyglot'
+Plug 'w0rp/ale'
+Plug 'itchyny/lightline.vim'
+Plug 'sickill/vim-monokai'
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+call plug#end()
+
 syntax on
 filetype plugin indent on
 
-" Mappings
+" Highlighting
 " ============================================================================
-map ,e :NERDTree<CR>
-map ,t :NERDTree<CR>
-map ,p :CtrlP<CR>
+
+" Highlight extra whitespace
+highlight BadWhitespace ctermbg=gray guibg=gray
+au BufRead,BufNewFile *.* match BadWhitespace /^\t\+/
+au BufRead,BufNewFile *.* match BadWhitespace /\s\+$/
 
 " Pretty things
 " ============================================================================
@@ -17,14 +29,6 @@ let g:lightline = {
 \       'gitbranch': 'gitbranch#name'
 \   }
 \ }
-
-" Highlighting
-" ============================================================================
-
-" Highlight extra whitespace
-highlight BadWhitespace ctermbg=gray guibg=gray
-au BufRead,BufNewFile *.* match BadWhitespace /^\t\+/
-au BufRead,BufNewFile *.* match BadWhitespace /\s\+$/
 
 " Syntax
 " ============================================================================
