@@ -62,11 +62,11 @@ au FileType html set shiftwidth=2
 let g:ale_linters = {'python': ['flake8']}
 
 " Markers for gutter
-let g:ale_sign_error = '😱'
-let g:ale_sign_warning = '😳'
+let g:ale_sign_error = '👺'
+let g:ale_sign_warning = '😡'
 let g:ale_sign_info = '🤔'
-let g:ale_sign_style_error = '🙄'
-let g:ale_sign_style_warning = '🧐'
+let g:ale_sign_style_error = '🤮'
+let g:ale_sign_style_warning = '🤢'
 
 " Clear gutter highlights
 highlight clear ALEErrorSign
