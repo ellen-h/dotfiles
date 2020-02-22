@@ -6,11 +6,15 @@ Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
 Plug 'itchyny/lightline.vim'
 Plug 'sickill/vim-monokai'
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'vimwiki/vimwiki'
 call plug#end()
 
 syntax on
 filetype plugin indent on
+
+" Navigation
+" ============================================================================
+" Remapping keys
 
 " Highlighting
 " ============================================================================
