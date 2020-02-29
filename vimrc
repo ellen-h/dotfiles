@@ -1,12 +1,13 @@
-" Plugins
-" :PlugInstall to install new plugins
+" vim-plug
 " ============================================================================
 call plug#begin('~/.vim/plugged')
+" :PlugInstall to install new plugins
 Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
 Plug 'itchyny/lightline.vim'
 Plug 'sickill/vim-monokai'
 Plug 'vimwiki/vimwiki'
+Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 call plug#end()
 
 syntax on
@@ -38,7 +39,7 @@ let g:lightline = {
 " ============================================================================
 " JSX highlight .jsx files only
 " let g:jsx_ext_required = 1
-
+let g:vim_jsx_pretty_colorful_config = 1
 
 " Filetypes and Formatting
 " ============================================================================
@@ -70,7 +71,7 @@ au FileType html set shiftwidth=2
 let g:ale_linters = {'python': ['flake8']}
 
 " Markers for gutter
-let g:ale_sign_error = '👺'
+let g:ale_sign_error = '🤬'
 let g:ale_sign_warning = '😡'
 let g:ale_sign_info = '🤔'
 let g:ale_sign_style_error = '🤮'
@@ -92,3 +93,16 @@ let g:NERDTreeNodeDelimiter = "\u00a0"
 " Colour fix for iTerm2
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+" Coc stuff
+if has_key(g:plugs, 'coc.nvim')
+    inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
+
+    function! s:check_back_space() abort
+        let col = col('.') - 1
+        return !col || getline('.')[col - 1] =~# '\s'
+    endfunction
+endif
