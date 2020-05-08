@@ -1,0 +1,19 @@
+[diff]
+	tool = vimdiff
+[alias]
+	vd = difftool
+	co = checkout
+	br = branch
+	st = status
+	s = status -uno
+	unstage = reset HEAD --
+	root = rev-parse --show-toplevel
+	l1 = log --pretty=oneline
+[user]
+	email = ***@***.com
+	name = *** ***
+[color]
+	ui = true
+    status = auto
+[submodule]
+	recurse = true

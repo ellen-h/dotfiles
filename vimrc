@@ -11,7 +11,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lock
 call plug#end()
 
 syntax on
-filetype plugin indent on
+filetype indent off
 
 " Navigation
 " ============================================================================
@@ -51,8 +51,10 @@ set shiftwidth=4
 
 " Filetypes
 au BufNewFile,BufRead *.js set filetype=javascript
+au BufNewFile,BufRead *.ts set filetype=javascript
 au BufNewFile,BufRead *.jsx set filetype=javascript
-au BufNewFile,BufRead *.html setlocal filetype=html
+au BufNewFile,BufRead *.html set filetype=html
+au BufNewFile,BufRead *.mako set filetype=html
 
 " JS, TS
 au FileType javascript set tabstop=2
