@@ -7,7 +7,9 @@ Plug 'w0rp/ale'
 Plug 'itchyny/lightline.vim'
 Plug 'sickill/vim-monokai'
 Plug 'vimwiki/vimwiki'
-Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': 'yarn install --frozen-lockfile'}
+"Bug: javascript file not found. Run :call coc#util#install()
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 syntax on
