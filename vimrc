@@ -110,3 +110,18 @@ if has_key(g:plugs, 'coc.nvim')
         return !col || getline('.')[col - 1] =~# '\s'
     endfunction
 endif
+
+" Wiki settings
+let wiki_default = {}
+let wiki_default.auto_export = 0
+let wiki_default.auto_toc = 0
+let wiki_default.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'sh': 'sh'}
+
+let work_wiki = copy(wiki_default)
+let work_wiki.path = '~/Documents/notes/work/'
+
+let personal_wiki = copy(wiki_default)
+let personal_wiki.path = '~/Documents/notes/personal/'
+let personal_wiki.path_html = '~/Documents/notes/html/personal/'
+
+let g:vimwiki_list = [work_wiki, personal_wiki]
