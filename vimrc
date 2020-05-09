@@ -12,6 +12,8 @@ Plug 'vimwiki/vimwiki'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
 syntax on
 filetype indent off
 
@@ -121,7 +123,7 @@ let work_wiki = copy(wiki_default)
 let work_wiki.path = '~/Documents/notes/work/'
 
 let personal_wiki = copy(wiki_default)
-let personal_wiki.path = '~/Documents/notes/personal/'
-let personal_wiki.path_html = '~/Documents/notes/html/personal/'
+let personal_wiki.path = '~/ellybeans/vimwiki/'
+let personal_wiki.path_html = '~/ellybeans/html/vimwiki/'
 
 let g:vimwiki_list = [work_wiki, personal_wiki]

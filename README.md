@@ -15,6 +15,21 @@ These instructions are Mac-centric.
 
 Using vim-plug so no need for separate install instructions. Run :PlugInstall in vim to install.
 
+### Manual installation
+
+- Fuzzy finder http://kien.github.io/ctrlp.vim/#installation
+
+    cd ~/.vim
+    git clone https://github.com/kien/ctrlp.vim.git bundle/ctrlp.vim
+
+Add to your ~/.vimrc:
+
+    set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+Run at Vim's command line:
+
+    :helptags ~/.vim/bundle/ctrlp.vim/doc
+
 # Installation
 
 - alacritty.yml: link .config/alacritty/alacritty.yml
