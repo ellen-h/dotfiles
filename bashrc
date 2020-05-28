@@ -31,8 +31,16 @@ else
 fi
 unset color_prompt
 
+# ----- Key presses -----
+#
 # Prevents EOF (ctrl-d) from exiting shell
 set -o ignoreeof
+
+# Key bindings
+bind '"\e[1;3A": end-of-line'
+bind '"\e[1;3B": end-of-line'
+bind '"\e[1;3C": end-of-line'
+bind '"\e[1;3D": end-of-line'
 
 # Last step, read local settings
 if [ -f ~/.bashrc_local ]; then
