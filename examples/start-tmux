@@ -1,0 +1,44 @@
+#!/bin/sh
+#
+# Note: base index in tmux.config is 1
+#
+session="dev"
+
+tmux has-session -t $session 2>/dev/null
+if [ $? = 0 ]; then
+  echo "tmux session named '$session' is already running"
+  exit 1
+fi
+
+# set up tmux
+tmux start-server
+
+# Window 1
+tmux new-session -d -s $session -n Console
+
+tmux splitw -h -p 50
+tmux splitw -v -p 50
+tmux send-keys "vim" C-m 
+
+tmux selectp -t 0
+tmux splitw -v -p 50
+
+# Window 2
+tmux new-window -t $session:2 -n "Run servers"
+tmux splitw -h -p 50
+tmux send-keys "echo 'Right tall pane'" C-m 
+
+tmux selectp -t 0
+tmux send-keys "echo 'Left top pane'" C-m 
+tmux splitw -v -p 70
+tmux send-keys "echo 'Left bottom pane'" C-m 
+
+# Window 3
+tmux new-window -t $session:3 -n "Editing"
+tmux splitw -h -p 50
+
+# return to main vim window
+tmux select-window -t $session:1
+
+# Finished setup, attach to the tmux session!
+tmux attach-session -t $session -c /home/me

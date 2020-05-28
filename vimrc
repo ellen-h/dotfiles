@@ -25,7 +25,7 @@ filetype indent off
 " ============================================================================
 
 " Highlight extra whitespace
-highlight BadWhitespace ctermbg=gray guibg=gray
+highlight BadWhitespace ctermbg=DarkGrey
 au BufRead,BufNewFile *.* match BadWhitespace /^\t\+/
 au BufRead,BufNewFile *.* match BadWhitespace /\s\+$/
 

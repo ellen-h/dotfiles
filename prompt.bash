@@ -5,7 +5,6 @@ set_prompt()  {
 	# Colours
     # note: May 2020: colours above 7 are not working
 	local red green yellow blue magenta cyan orange grey violet lgrey no_colour
-    lime=$(echo -en '\e[1;32m')
 	red=$(tput setaf 1)
 	green=$(tput setaf 2)
 	yellow=$(tput setaf 3)
@@ -24,7 +23,7 @@ set_prompt()  {
     if [[ $VIRTUAL_ENV != "" ]]
     then
         __venv="${VIRTUAL_ENV##*/}"
-        PS1+="\\[$lime\\](${__venv})"
+        PS1+="\\[$blue\\](${__venv}) "
         # Strip out the path and just leave the env name
     fi
 
@@ -50,7 +49,7 @@ set_prompt()  {
 			PS1+="(\\[$lgrey\\]$__submodname\\[$grey\\])"
 		elif __bname=$(git symbolic-ref -q --short HEAD); then
 			# Use variable instead of assigning directly because of expansions vulnerability
-			PS1+="\\[$cyan\\]\${__bname}"
+			PS1+="\\[$yellow\\]\${__bname}"
 			local space=" "
 
 			# Unstaged changes
@@ -115,5 +114,5 @@ set_prompt()  {
 
 	# Set rest of prompt
 	#PS1+="\\[$orange\\]\$__un\\[$blue\\]@\\[$yellow\\]\$__hn\\[$orange\\]:\\[$violet\\]\$__cwd\\[$sign_col\\]\\$\\[$no_colour\\] "
-	PS1+="\\[$magenta\\]\${USER} \\[$lime\\]\$__cwd\\[$sign_col\\]\n\\$\\[$no_colour\\] "
+	PS1+="\\[$cyan\\]\${USER} \\[$violet\\]\$__cwd\\[$sign_col\\]\n\\$\\[$no_colour\\] "
 }
