@@ -120,7 +120,7 @@ let wiki_default.auto_toc = 0
 let wiki_default.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'sh': 'sh'}
 
 let work_wiki = copy(wiki_default)
-let work_wiki.path = '~/Documents/notes/work/'
+let work_wiki.path = '~/vimwiki/'
 
 let personal_wiki = copy(wiki_default)
 let personal_wiki.path = '~/ellybeans/vimwiki/'
